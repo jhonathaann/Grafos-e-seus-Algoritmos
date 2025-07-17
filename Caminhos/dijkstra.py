@@ -1,5 +1,12 @@
 import heapq
 
+'''como a fila de prioridade (min-heap) Q funciona: cada elemento é uma
+    tupla (distancia, vertice). o heap é ordenando pelo primeiro elemento da tupla
+    (distancia). quando eu vertice v tem a sua menor distancia atualizada, essa nova
+    tupla é add na fila "heapq.heappush(Q, (new_dist, v))".
+    
+    '''
+
 # funcao recebe o grafo G, os pesos associados as areas e um vertice de origem s
 def dijkstra(G, pesos, s):
     # iniciando as dist associadas a cada vertice ao vertice de origem (s) como infinito
@@ -12,9 +19,6 @@ def dijkstra(G, pesos, s):
     # a distancia de s para o vertice de origem (s) é 0
     d[s] = 0
 
-    '''como a fila de prioridade (min-heap) Q funciona: cada elemento é uma
-    tupla (distancia, vertice). o heap é ordenando pelo primeiro elemento da tupla
-    (distancia)'''
     Q = [(0, s)]
     heapq.heapify(Q) # transformando a lista Q em um heap
 
